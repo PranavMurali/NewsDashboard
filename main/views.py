@@ -1,24 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import marks
 # Create your views here.
 
-posts=[
-    {
-        "author":"me",
-        "title":"wose",
-        "content":"wo",
-        "date":"23421"
-    },
-    {
-        "author":"meeses",
-        "title":"wosesse",
-        "content":"wsesefo",
-        "date":"2342sef1"
-    }
-]
 def home(request):
     context={
-        "posts":posts,
+        "posts":marks.objects.all(),
         "Title":"Home"
     }
     return render(request,'main/home.html',context)

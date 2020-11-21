@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{%static 'main/main.css'%}">
     {% if title %}
@@ -22,13 +23,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarToggle">
         <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link" href="{% url "Main-home" %}">Home</a>
-            <a class="nav-item nav-link" href="{% url "Main-about" %}">About</a>
+            <a class="nav-item nav-link" href="{% url "Main-home" %}"><i class="material-icons ">home</i> Home</a>
+            <a class="nav-item nav-link" href="{% url "Main-about" %}"><i class="material-icons ">storefront</i> About</a>
+            <a class="nav-item nav-link" href="{% url "Main-about" %}"><i class="material-icons ">analytics</i> Capture Data</a>
         </div>
         <!-- Navbar Right Side -->
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Login</a>
-            <a class="nav-item nav-link" href="#">Register</a>
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'profile' %}"><i class="material-icons ">face</i>Profile</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}"><i class="material-icons ">directions_run</i>Logout</a>
+            {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}"><i class="material-icons ">login</i>Login</a>
+                <a class="nav-item nav-link" href="{% url 'register'%}"><i class="material-icons ">book</i>Register</a>
+            {% endif %}
         </div>
         </div>
     </div>
@@ -37,17 +44,24 @@
 <main role="main" class="container">
     <div class="row">
     <div class="col-md-8">
+        {% if messages %}
+            {%for message in messages%}
+            <div class="alert alert-{{message.tags}}">
+            {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
         {% block content %}{% endblock %}
     </div>
     <div class="col-md-4">
         <div class="content-section">
-        <h3>Our Sidebar</h3>
+        <h3 class="wht">Our Sidebar</h3>
         <p class='text-muted'>You can put any information here you'd like.
             <ul class="list-group">
-            <li class="list-group-item list-group-item-light">Latest Posts</li>
-            <li class="list-group-item list-group-item-light">Announcements</li>
-            <li class="list-group-item list-group-item-light">Calendars</li>
-            <li class="list-group-item list-group-item-light">etc</li>
+            <li class="list-group-item bglist">Latest Posts</li>
+            <li class="list-group-item bglist">Announcements</li>
+            <li class="list-group-item bglist">Calendars</li>
+            <li class="list-group-item bglist">etc</li>
             </ul>
         </p>
         </div>

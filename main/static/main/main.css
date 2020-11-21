@@ -1,10 +1,10 @@
 body {
-    background: #ffffff;
+    background: #111111;
     color: #000000;
     margin-top: 5rem;
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  .wht {
     color: #ffffff;
   }
   
@@ -31,7 +31,7 @@ body {
   .content-section {
     background: #000000;
     padding: 10px 20px;
-    border: 1px solid #dddddd;
+    border: 1px solid #585858;
     border-radius: 3px;
     margin-bottom: 20px;
   }
@@ -81,4 +81,27 @@ body {
   
   .account-heading {
     font-size: 2.5rem;
+  }
+  
+  .formbg{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+
+  .form-group{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+
+  .blktext{
+    color: rgb(0, 0, 0);
+  }
+
+  .bglist{
+    background-color: rgb(27, 27, 27);
+    color: rgb(255, 255, 255);
+  }
+
+  .nav-item{
+    display: inline-flex;
   }
