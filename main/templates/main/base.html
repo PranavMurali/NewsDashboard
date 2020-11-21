@@ -25,7 +25,7 @@
         <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link" href="{% url "Main-home" %}"><i class="material-icons ">home</i> Home</a>
             <a class="nav-item nav-link" href="{% url "Main-about" %}"><i class="material-icons ">storefront</i> About</a>
-            <a class="nav-item nav-link" href="{% url "Main-about" %}"><i class="material-icons ">analytics</i> Capture Data</a>
+            <a class="nav-item nav-link" href="{% url "Main-scrap" %}"><i class="material-icons ">analytics</i> Capture Data</a>
         </div>
         <!-- Navbar Right Side -->
         <div class="navbar-nav">
@@ -58,10 +58,8 @@
         <h3 class="wht">Our Sidebar</h3>
         <p class='text-muted'>You can put any information here you'd like.
             <ul class="list-group">
-            <li class="list-group-item bglist">Latest Posts</li>
-            <li class="list-group-item bglist">Announcements</li>
-            <li class="list-group-item bglist">Calendars</li>
-            <li class="list-group-item bglist">etc</li>
+            <li class="list-group-item bglist"><a href="{% url 'Main-luckyc'%}">Im feeeling woses</a></li>
+            <li class="list-group-item bglist"><a href="{% url 'Main-luckyd'%}">Im feeeling Woses</a></li>
             </ul>
         </p>
         </div>

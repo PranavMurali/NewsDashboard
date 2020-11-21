@@ -105,3 +105,10 @@ body {
   .nav-item{
     display: inline-flex;
   }
+
+  #yay {
+    position:relative;
+    margin:auto;
+    width:auto;
+    text-align:center;
+}
