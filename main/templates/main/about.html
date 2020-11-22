@@ -1,8 +1,14 @@
 {% extends 'main/base.html' %}
 {%block content%}
-    {% if title %}
-        <title>Django Dash -{{Title}}</title>
-    {% else %}
-        <title>Django Dash </title>
-    {% endif %}
+        <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+            <b class="hey">Hey There!</b>
+            </div>
+            <p class= "about">You've stumbled upon the about page.
+            This website was made to personalise the user's reading experience in a different way than usual.
+            The news reflects what happens around us , though we do not have complete control on what happens around us,
+            I want you, the reader to have control over what kind of news you consume, be it positive , negative or just the latest.</p>
+        </div>
+        </article>
 {% endblock content%}

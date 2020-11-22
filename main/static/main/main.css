@@ -7,17 +7,25 @@ body {
   .wht {
     color: #ffffff;
   }
-  
+
+  .hey
+  {
+    color: rgb(128, 122, 209);
+    font-size: xx-large;
+  }
+
   ul {
     margin: 0;
   }
   
   .bg-steel {
     background-color: #000000;
+    background-image:linear-gradient(rgb(0, 0, 0), rgb(26, 26, 25));
   }
   
   .site-header .navbar-nav .nav-link {
     color: #ffffff;
+    
   }
   
   .site-header .navbar-nav .nav-link:hover {
@@ -33,7 +41,7 @@ body {
     padding: 10px 20px;
     border: 1px solid #585858;
     border-radius: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
   }
   
   .article-title {
@@ -48,6 +56,8 @@ body {
   .article-content {
     color: #ffffff;
     white-space: pre-line;
+    height: auto;
+    width: auto;
   }
   
   .article-img {
@@ -111,4 +121,22 @@ body {
     margin:auto;
     width:auto;
     text-align:center;
-}
+  }
+
+  .media-body{
+    overflow: hidden;
+  }
+
+  .material-icons:hover{
+    transform: rotate(360deg);
+  }
+
+  .material-icons{
+    transition: transform 3s ease 0s;
+  }
+
+  .about{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+  }
