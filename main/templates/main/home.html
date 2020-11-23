@@ -8,6 +8,7 @@
             <small class="text-muted">{{ post.date_modified|date:"P d F, o" }}</small>
             </div>
             <h2><a class="article-title" href="{{post.content}}">{{ post.title }}</a></h2>
+            <p class="wht">{{post.score}}</p>
         </div>
         </article>
     {% endfor %}
