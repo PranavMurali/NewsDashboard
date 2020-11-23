@@ -27,9 +27,10 @@ def about(request):
 @login_required
 def scrap(request):
     Marks.objects.filter(author=request.user).delete()
-    scrapnews(request.user)
+    data=scrapnews(request.user)
     context={
-        "all":Marks.objects.filter(author=request.user)
+        "all":Marks.objects.filter(author=request.user),
+        "scr":data
     }
     messages.success(request,f'Latest news has been scraped !')
     return render(request,'main/scrap.html',context)

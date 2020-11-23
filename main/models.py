@@ -8,7 +8,7 @@ class Marks(models.Model):
     content=models.TextField()
     date_modified=models.DateTimeField(auto_now=True)
     author= models.ForeignKey(User,on_delete=models.CASCADE)
-    score= models.IntegerField(default=0)
+    score= models.TextField(max_length=10)
     
     def __str__(self):
         return self.title
