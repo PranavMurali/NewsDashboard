@@ -41,6 +41,7 @@ def luckyc(request):
 def luckyd(request):
     return render(request,'main/luckyd.html')
 
+@login_required
 def clearfeed(request):
     messages.warning(request, f'Your feed hath been cleansed')
     Marks.objects.filter(author=request.user).delete()
