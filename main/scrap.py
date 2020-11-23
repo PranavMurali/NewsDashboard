@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 from requests.api import request
-from .models import marks
+from .models import Marks
+from main.anlysis import analysis
 hrefa=[]
 title=[]
 
@@ -21,6 +22,8 @@ def scrapnews(user):
         title.append(a.text)
     for b in soup.find_all('a', {'class':'DY5T1d'}):
         href.append("https://news.google.com/"+b['href'])
+    scr=analysis(title)
     for i in range(len(title)):  
-        datas=marks(content=href[i],author=user,title=title[i])
+        datas=Marks(content=href[i],author=user,title=title[i],score=scr[i])
         datas.save()
+        datas.objects.filter(author=request.user).update(score=scr[i])
