@@ -4,11 +4,12 @@
         <article class="media content-section">
         <div class="media-body">
                 <div class="article-metadata">
+                <a class="mr-2" href="{% url 'profile' %}">{{ post.3 }}</a>
+                <small class="text-muted">{{ post.4|date:"P d F, o" }}</small>
                 </div>
-                <h2><a class="article-title" href={{post.2}}>{{ post.0 }}</a></h2>
+                <h2><a class="article-title" href="{{post.2}}">{{ post.0 }}</a></h2>
                 <p class="wht">{{post.1}}</p>
-        </div>
+                </div>
         </article>
         {% endfor %}
-
 {% endblock content%}

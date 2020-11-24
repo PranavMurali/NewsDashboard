@@ -32,7 +32,7 @@ def scrapnews(user):
         dic={scr[i]:[title[i],href[i]]}
         dicts.update(dic)
     dictss=dicts.items()
-    fin=sorted(dictss)
+    fin=sorted(dictss,reverse=True)
     for i in range(len(fin)):
         scrs,lists=fin[i]
         fintit.append(lists[0])
@@ -41,6 +41,6 @@ def scrapnews(user):
     scrs=list(map(str,finscr)) 
     for i in range(len(fintit)):  
         datas=Marks(content=finhref[i],author=user,title=fintit[i],score=finscr[i])
-        data.append([fintit[i],finscr[i],finhref[i]])
+        data.append([fintit[i],finscr[i],finhref[i],user,datas.date_modified])
         datas.save()
     return data
