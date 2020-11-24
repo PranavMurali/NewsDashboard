@@ -2,13 +2,34 @@
 {%block content%}
         {% for post in scr %}
         <article class="media content-section">
-        <div class="media-body">
+        {% if post.1 > 0%}
+        <div class="media-body positive">
                 <div class="article-metadata">
                 <a class="mr-2" href="{% url 'profile' %}">{{ post.3 }}</a>
                 <small class="text-muted">{{ post.4|date:"P d F, o" }}</small>
                 </div>
                 <h2><a class="article-title" href="{{post.2}}">{{ post.0 }}</a></h2>
                 <p class="wht">{{post.1}}</p>
+
+        {% elif post.1 == 0%}
+        <div class="media-body zero">
+                <div class="article-metadata">
+                <a class="mr-2" href="{% url 'profile' %}">{{ post.3 }}</a>
+                <small class="text-muted">{{ post.4|date:"P d F, o" }}</small>
+                </div>
+                <h2><a class="article-title" href="{{post.2}}">{{ post.0 }}</a></h2>
+                <p class="wht">{{post.1}}</p>
+
+        {% elif post.1 < 0%}
+        <div class="media-body negative">
+                <div class="article-metadata">
+                <a class="mr-2" href="{% url 'profile' %}">{{ post.3 }}</a>
+                <small class="text-muted">{{ post.4|date:"P d F, o" }}</small>
+                </div>
+                <h2><a class="article-title" href="{{post.2}}">{{ post.0 }}</a></h2>
+                <p class="wht">{{post.1}}</p>
+
+        {% endif %}
                 </div>
         </article>
         {% endfor %}
