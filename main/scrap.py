@@ -6,6 +6,10 @@ from main.anlysis import analysis
 hrefa=[]
 title=[]
 data=[]
+dicts={}
+fintit=[]
+finhref=[]
+finscr=[]
 
 def scrapnews(user): 
     url="https://www.goodnewsnetwork.org/category/news/"
@@ -24,9 +28,19 @@ def scrapnews(user):
     for b in soup.find_all('a', {'class':'DY5T1d'}):
         href.append("https://news.google.com/"+b['href'])
     scr=analysis(title)
-    scrs=list(map(str, scr)) 
-    for i in range(len(title)):  
-        datas=Marks(content=href[i],author=user,title=title[i],score=scrs[i])
-        data.append([title[i],scr[i],href[i]])
+    for i in range(len(title)):
+        dic={scr[i]:[title[i],href[i]]}
+        dicts.update(dic)
+    dictss=dicts.items()
+    fin=sorted(dictss)
+    for i in range(len(fin)):
+        scrs,lists=fin[i]
+        fintit.append(lists[0])
+        finhref.append(lists[1])
+        finscr.append(scrs)
+    scrs=list(map(str,finscr)) 
+    for i in range(len(fintit)):  
+        datas=Marks(content=finhref[i],author=user,title=fintit[i],score=finscr[i])
+        data.append([fintit[i],finscr[i],finhref[i]])
         datas.save()
     return data
