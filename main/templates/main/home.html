@@ -9,15 +9,6 @@
             </div>
             <h2><a class="article-title" href="{{post.content}}">{{ post.title }}</a></h2>
             <p class="wht">{{post.score|floatformat:"2" }}</p>
-            {% if "-0" in post.score%}
-                <p class="wht">dei</p>
-
-            {% else%}
-                <p class="wht">dei deid dei</p>
-
-            {% if "0.00" in post.score%}
-                <p class="wht">dei dei</p>
-            {% endif %}
         </div>
         </article>
     {% endfor %}

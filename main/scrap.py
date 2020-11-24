@@ -43,4 +43,7 @@ def scrapnews(user):
         datas=Marks(content=finhref[i],author=user,title=fintit[i],score=finscr[i])
         data.append([fintit[i],finscr[i],finhref[i],user,datas.date_modified])
         datas.save()
+        print(fintit)
+        print(finhref)
+        print(finscr)
     return data

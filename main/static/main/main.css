@@ -140,3 +140,15 @@ body {
     color: rgb(255, 255, 255);
     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
   }
+
+  .postive{
+    border: #09ff00;
+  }
+
+  .zero{
+    border: #e6f600;
+  }
+
+  .negative{
+    border: #ff0000;
+  }
