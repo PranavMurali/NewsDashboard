@@ -26,12 +26,3 @@
 ### Clearing feed to re-scrape:
 ![alt](../main/readme/clear.png)
 
-
-
-### Fun little cat gif generator:
-![alt](../main/readme/cat.png)
-
-
-
-### Dog picture generator for fun:
-![alt](../main/readme/dog.png)
